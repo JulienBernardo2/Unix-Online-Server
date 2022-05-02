@@ -3,12 +3,12 @@
   *This guide is meant to be done in Windows instead of Linux, therefore before completing
   any steps install gitbash so that Linux commands will be recognized in Windows*
   
-## VPS Installation guide with OVHCloud :goal_net:
-  Step 1 : Create an account on OVHCloud
-  Step 2 : Login to your account
-  Step 3 : Go to the Bare Metal Cloud tab and then navigate to virtual-private server
-  Step 4 : You will see the different specs about your vps like the IP address
-  Step 5 : The status should be running, and the distribution will be Debian 11
+## VPS Installation guide with OVHCloud
+  1. Create an account on OVHCloud
+  2. Login to your account
+  3. Go to the Bare Metal Cloud tab and then navigate to virtual-private server
+  4. You will see the different specs about your vps like the IP address
+  5. The status should be running, and the distribution will be Debian 11
 
 
 ## Connecting to the server
@@ -35,11 +35,11 @@
   Step 3 : run the command apt-get upgrade to upgrade the system
   
 ##Creation of SSH Keys on Windows
-  Step 1 : Search on a browser for PuttyGen and download the application
-  Step 2 : Once your in the application click generate and move mouse around to create the key
-  Step 3 : Copy the public key text
-  Step 4 : Now log into your OVHCLoud account and on the dashboard tab go to service managment, it i will
-           bring you to the My Services page
+  1. Search on a browser for PuttyGen and download the application
+  2. Once your in the application click generate and move mouse around to create the key
+  3. Copy the public key text
+  4. Now log into your OVHCLoud account and on the dashboard tab go to service managment, it i will
+     bring you to the My Services page
   Step 5 : Go on the SSH tab and then click the add an ssh key button and select dedicated
   Step 6 : For ID enter the username that you created and for the key paste the text from step 3
   Step 7 : Click confirm
