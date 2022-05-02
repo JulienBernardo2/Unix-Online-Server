@@ -65,5 +65,7 @@ Choose to use either Debian Terminal or Windows Putty Application
               ![image](https://user-images.githubusercontent.com/82057989/166299099-8244071c-4072-4485-91b2-258915c066eb.png)
 
 ##Adding a Web Server
-  Step 1 : 
+  Step 1 : run the command (apt install nginx)
+  Step 2 : to check if it worked go on a browser and type in http/(your IP address)
+  
   
