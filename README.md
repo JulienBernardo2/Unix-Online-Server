@@ -2,10 +2,10 @@
 
 ## Project description and goals
 
-        We are aiming to achieve a secure and fast online web server for all users to help providing a good service. Our online server will contain many useful                 websites to help our users the best we can. The best way to get our server running will be by purchasing a VPS and using that. This will also help with our             security for our web server.
+ We are aiming to achieve a secure and fast online web server for all users to help providing a good service. Our online server will contain many useful                 websites to help our users the best we can. The best way to get our server running will be by purchasing a VPS and using that. This will also help with our             security for our web server.
 
 ## Platform of choice
-        For the platform, we decided to go with OVHcloud over DigitalOcean. Each VPS has their own qualities, but OVH is a better deal. OVHcloud virtual private server         is good because it has a decent price and offers a better protection than other. The main pros and cons between OVHcloud and DigitalOcean are shown in the              picture below. 
+ For the platform, we decided to go with OVHcloud over DigitalOcean. Each VPS has their own qualities, but OVH is a better deal. OVHcloud virtual private server         is good because it has a decent price and offers a better protection than other. The main pros and cons between OVHcloud and DigitalOcean are shown in the              picture below. 
 
 ## Requirements
   Creation of user accounts: We will create our own account for our VPS but when it comes to multiple user accounts we are not to sure if we will need to implement       this yet. 
