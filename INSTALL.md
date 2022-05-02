@@ -64,6 +64,6 @@
 ## Adding a Web Server
   *We chose to use Nginx as our Web Server*
   1. Run the command __(apt install nginx)__
-  2. To check if it worked go on a browser and type in http://your IP address
+  2. To check if it worked go on a browser and type in http:// your IP address
   
   
