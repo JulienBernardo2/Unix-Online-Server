@@ -14,23 +14,7 @@
 
    Basic system security: since we have a VPS the system security will be much easier to deal with. We will first choose a hosting provider that prioritizes security,    we will then try and set up a firewall using IP tables. 
 
-   Automated tasks using scripted language: At this moment we do not have any use for automated tasks but once we start building our web server, we will surely create    some.
-   
-## Solutions compared 💻
-   Choice of VPS: OVHCloud
-   
-  - Good backups
-  - Good block storage
-  - Good object storage
-  - Good load balancer
-  - Has DDoS protection  
-  - Has mixed hurly blling
-  - Has SSH keys setup
-  - Has 8 datacenters
-  - Has 3 datacenters continents
-   
-       
-               
+   Automated tasks using scripted language: At this moment we do not have any use for automated tasks but once we start building our web server, we will surely create    some.        
 
 ## Timelines 🕙
    - First week: VPS research, task division for each member, buying materials such as VPSs, choosing websites to put on the server.
