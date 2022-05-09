@@ -65,5 +65,23 @@
   *We chose to use Nginx as our Web Server*
   1. Run the command __(apt install nginx)__
   2. To check if it worked go on a browser and type in http:// your IP address
+
+## Cloning the Project from GitHub and adding your own website
+  1. Add your .html file to your repository on git hub
+  2. Then navigate to settings and the deploy key tab
+  3. You will click on add a key and then give a title to the key and 
+     create the key by copying the key fingerprint from the commands __(ssh username@IP_address)__ and then __(ssh-keygen)__
+  5. To change the ownership for the html folder run this command __(sudo chown -R julien:www-data /var/www/html)__
+  6. First type in the command __(sudo mkdir /var/www/.ssh)__ to create the .ssh file
+  7. Once your there youll want to run the command __(sudo -Hu julien ssh-keygen -t rsa)__
+  8. Then youll run the command __(git clone -b main "link to git hub repo" /var/www/html)__ to clone the repo
+  9. Then youll want to go to the sites availible location for the nginx by running the command
+     __(cd /etc/nginx/sites-available)__
+  6.  Once your in that location youll want to edit the default file by running the command __(sudo nano default)__
+  7.  In the file you will want to add the lines following:
+              root /var/www/"name of repo";
+              index "name of html file".html;
+  8. After that you will reload the nginx __(sudo systemctl reload nginx)__ and your website should be uploaded 
+
   
   
