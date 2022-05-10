@@ -86,25 +86,31 @@
 
 ## Auto update website when changes are made
   1. First run the command __(sudo nano /usr/bin/deploy.sh)__ and edit the file by adding the lines
-       #bin/bash
-       cd /var/www/"name of cloned repo"
-       git fetch --all
-       git checkout --force "origin/main"
+     - #bin/bash
+     - cd /var/www/"name of cloned repo"
+     - git fetch --all
+     - git checkout --force "origin/main"
+     
   2. Then save the file and run the two commands __(sudo chmod 777 /usr/bin/deploy.sh)__ and __(sudo chmod +x /usr/bin/deploy.sh)__
-  3. After this run the command __(sudo nano /etc/systemd/system/deployment.service)__ and edit the file by adding
-        [Unit]
-        Description=add your description
+  
+  4. After this run the command __(sudo nano /etc/systemd/system/deployment.service)__ and edit the file by adding
+     - [Unit]
+     - Description=add your description
 
-        [Service]
-        ExecStart=/usr/bin/deploy.sh
+     - [Service]
+     - ExecStart=/usr/bin/deploy.sh
 
-        [Install]
-        WantedBy=multi-user.target
+     - [Install]
+     - WantedBy=multi-user.target
+     
   4. Repeat step 2
-  5. After this youll want to reload daemon  by running the following commands
-         sudo systemctl daemon-reload
-         sudo systemctl enable deployment.service
-         sudo systemctl start deployment.service
-  7. After that you could test to see if your service works by editing your file and reloading the page.
+  
+  6. After this youll want to reload daemon  by running the following commands
+     - sudo systemctl daemon-reload
+     - sudo systemctl enable deployment.service
+     - sudo systemctl start deployment.service
+     
+  7. 
+  8. After that you could test to see if your service works by editing your file and reloading the page.
   
   
