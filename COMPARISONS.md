@@ -38,3 +38,6 @@
    because it actually let us access our VPS. We know that there are other solutions for this problem, but Putty was the easiest
    one. Also we noticed that we could download git bash to get all of the Linux commands on Windows so this inticed us even more
    to use Putty.
+   
+   ## Nginx
+   We still ended up using the Nginx web server and succesfully adding our website to our VPS with it.
