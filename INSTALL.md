@@ -84,7 +84,7 @@
   8. After that you will reload the nginx __(sudo systemctl reload nginx)__ and your website should be uploaded 
 
 
-## Auto update website when changes are made
+## Auto update website when changes are made with a timer
   1. First run the command __(sudo nano /usr/bin/deploy.sh)__ and edit the file by adding the lines
      - #bin/bash
      - cd /var/www/"name of cloned repo"
@@ -96,10 +96,8 @@
   4. After this run the command __(sudo nano /etc/systemd/system/deployment.service)__ and edit the file by adding
      - [Unit]
      - Description=add your description
-
      - [Service]
      - ExecStart=/usr/bin/deploy.sh
-
      - [Install]
      - WantedBy=multi-user.target
      
@@ -110,7 +108,17 @@
      - sudo systemctl enable deployment.service
      - sudo systemctl start deployment.service
      
-  7. 
-  8. After that you could test to see if your service works by editing your file and reloading the page.
+  7. After these steps you will create the timer by running the command __(sudo nano /etc/systemd/system/deployment.timer)__ and adding the lines
+     - [Unit]
+     - Description = Timer for the service
+     - [Timer]
+     - OnUnitActiveSec=15sec
+     - OnBootSec=10
+     - [Install]
+     - WantedBy=timers.target
+     
+  9. Repeat step 2 and step 6 *(but with deployment.timer instead of .service)*
+  
+  10. After that you could test to see if your service works by editing your file and reloading the page.
   
   
