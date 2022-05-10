@@ -1,0 +1,9 @@
+[Unit]
+Description = Timer for the service
+
+[Timer]
+OnUnitActiveSec=15sec
+OnBootSec=10
+
+[Install]
+WantedBy=timers.target
