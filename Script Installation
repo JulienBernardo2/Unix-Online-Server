@@ -23,7 +23,8 @@ Save the file and add permission, sudo chmod 777 /usr/bin/ deploy.sh sudo chmode
 Then we create our services:
 First is the service to start our script.
 sudo nano /etc/systemd/system/deployment.service. Add the following.
-##
+
+----------------------------------------------------------------------
 [Unit]
 Description= add your description
 
@@ -32,7 +33,7 @@ ExecStart=/usr/bin/deploy.sh
 
 [Install]
 WantedBy=multi-user.target
-
+----------------------------------------------------------------------
 
 
 
@@ -41,6 +42,7 @@ And for the last trick, we are going to craete another service.
 A timer that runs the script every 15 seconds 
 sudo nano /etc/systemd/system/deployment.timer IMPORTANT make sure you named it the same way as your other service 
 
+----------------------------------------------------------------------
 [Unit]
 Description=add your description
 
@@ -50,24 +52,30 @@ OnBootSec=10
 
 [Install]
 WantedBy=timers.target
-
+----------------------------------------------------------------------
 
 
 Save the file and add permission
 Last time is to make the service functional
 Let's start with the deployment.services
 
+----------------------------------------------------------------------
 sudo systemctl daemon-reload
 sudo systemctl enable deployment.service
 sudo systemctl start deployment.service
-sudo systemctl status deployment.service to see if the srevice is active and running if not,
+sudo systemctl status deployment.service 
+----------------------------------------------------------------------
+
+To see if the srevice is active and running. If not,
 make sure you did not misspelled anything and you added permissions
 Next is deployment.timer
 
+----------------------------------------------------------------------
 sudo systemctl daemon-reload
 sudo systemctl enable deployment.timer 
 sudo systemctl start deployment.timer 
 sudo systemctl status deployment.timer
+----------------------------------------------------------------------
 
 Now all changes you make you make on github should applied automatically on your vps
 The script runs every 15secs to check if there any changes made
