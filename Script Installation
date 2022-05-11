@@ -23,7 +23,7 @@ Save the file and add permission, sudo chmod 777 /usr/bin/ deploy.sh sudo chmode
 Then we create our services:
 First is the service to start our script.
 sudo nano /etc/systemd/system/deployment.service. Add the following.
-
+##
 [Unit]
 Description= add your description
 
