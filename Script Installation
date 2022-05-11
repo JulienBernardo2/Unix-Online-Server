@@ -1,0 +1,73 @@
+First thing is to do is to to set up your github repository
+Follow this guide 
+After finishing your repository, go back to vps
+This time we are going to copy the public keys we created earlier and paste on github
+cat ∿/ .ssh/id_rsa.pub, copy ths key and go to your github repository
+Click settings > look for deploy keys on the left side > click add deploy key on the top right
+Give it a proper name and paste your key then click Add key
+Now go back to VPS
+Let's create the script sudo nano /usr/bin/deploy.sh. Add the following.
+
+#!/bin/bash
+cd /var/www/IP_ADDRESS
+git fetch --all 
+git checkout --force "origin/main"
+
+
+
+
+First line is to make sure we are in the right directory.
+Second line gets all the dat afrom the github repo without merging or rebassing
+Third line using the optional command force to make sure that any changes that happens will be applied to the local repository as well
+Save the file and add permission, sudo chmod 777 /usr/bin/ deploy.sh sudo chmode +x /usr/ bin/deploy.sh
+Then we create our services:
+First is the service to start our script.
+sudo nano /etc/systemd/system/deployment.service. Add the following.
+
+[Unit]
+Description= add your description
+
+[service]
+ExecStart=/usr/bin/deploy.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+Save the file and add permission again.
+And for the last trick, we are going to craete another service.
+A timer that runs the script every 15 seconds 
+sudo nano /etc/systemd/system/deployment.timer IMPORTANT make sure you named it the same way as your other service 
+
+[Unit]
+Description=add your description
+
+[Timer]
+OnUnitActiveSec = 15 sec
+OnBootSec=10
+
+[Install]
+WantedBy=timers.target
+
+
+
+Save the file and add permission
+Last time is to make the service functional
+Let's start with the deployment.services
+
+sudo systemctl daemon-reload
+sudo systemctl enable deployment.service
+sudo systemctl start deployment.service
+sudo systemctl status deployment.service to see if the srevice is active and running if not,
+make sure you did not misspelled anything and you added permissions
+Next is deployment.timer
+
+sudo systemctl daemon-reload
+sudo systemctl enable deployment.timer 
+sudo systemctl start deployment.timer 
+sudo systemctl status deployment.timer
+
+Now all changes you make you make on github should applied automatically on your vps
+The script runs every 15secs to check if there any changes made
